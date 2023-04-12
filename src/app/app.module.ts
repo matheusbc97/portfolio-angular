@@ -11,6 +11,7 @@ import { HomeStacksComponent } from './pages/home-page/components/sections/home-
 import { HomeProjectsComponent } from './pages/home-page/components/sections/home-projects/home-projects.component';
 import { HomeContactsComponent } from './pages/home-page/components/sections/home-contacts/home-contacts.component';
 import { PlaygroundPageComponent } from './pages/playground-page/playground-page.component';
+import { PlaygroundSearchBarExampleComponent } from './pages/playground-page/components/sections/playground-search-bar-example/playground-search-bar-example.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { PlaygroundPageComponent } from './pages/playground-page/playground-page
     HomeProjectsComponent,
     HomeContactsComponent,
     PlaygroundPageComponent,
+    PlaygroundSearchBarExampleComponent,
   ],
   imports: [
     BrowserModule,
