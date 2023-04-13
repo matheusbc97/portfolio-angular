@@ -12,6 +12,7 @@ import { HomeProjectsComponent } from './pages/home-page/components/sections/hom
 import { HomeContactsComponent } from './pages/home-page/components/sections/home-contacts/home-contacts.component';
 import { PlaygroundPageComponent } from './pages/playground-page/playground-page.component';
 import { PlaygroundSearchBarExampleComponent } from './pages/playground-page/components/sections/playground-search-bar-example/playground-search-bar-example.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PlaygroundSearchBarExampleComponent } from './pages/playground-page/com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
