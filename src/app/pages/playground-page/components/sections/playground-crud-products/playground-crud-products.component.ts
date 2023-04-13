@@ -12,29 +12,25 @@ interface Product {
   styleUrls: ['./playground-crud-products.component.scss']
 })
 export class PlaygroundCrudProductsComponent {
-  productForm = new FormGroup({
-    name: new FormControl(''),
-    description: new FormControl(''),
+  suggestionForm = new FormGroup({
+    text: new FormControl(''),
   });
 
-  public products: Product[]  = []
+  public products  = new Set<string>();
 
   constructor() { }
 
   createProduct() {
-    const {description, name} = this.productForm.value;
+    const {text} = this.suggestionForm.value;
 
-    console.log('createProduct', this.productForm.value);
-
-    if( !name) {
+    if( !text) {
       return;
     }
 
-    this.products.push({description: '', name});
+    this.products.add(text);
   }
 
-  deleteProduct(index: number) {
-    console.log('deleteProduct', index);
-    this.products.splice(index, 1);
+  deleteProduct(product: string) {
+    this.products.delete(product);
   }
 }
