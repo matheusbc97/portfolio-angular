@@ -1,23 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { productsMock } from 'src/app/shared/mocks/products';
-import { FilterArrayBySearchService } from '../../../services/filter-array-by-search.service';
+import { SearchProductService } from './observables/search-product.service';
 
 @Component({
   selector: 'app-playground-search-bar-example',
   templateUrl: './playground-search-bar-example.component.html',
   styleUrls: ['./playground-search-bar-example.component.scss']
 })
-export class PlaygroundSearchBarExampleComponent {
+export class PlaygroundSearchBarExampleComponent implements OnInit, OnDestroy {
   searchForm = new FormGroup({
     search: new FormControl(''),
   });
 
-  filteredProducts = new FilterArrayBySearchService(productsMock, item => item.name);
+  searchProductsService = new SearchProductService(this.searchForm.valueChanges);
 
-  onSearchChange() {
-    const {search} = this.searchForm.value;
+  ngOnInit() {
+  }
 
-    this.filteredProducts.filter(search);
+  ngOnDestroy() {
+    this.searchProductsService.unsubscribe();
   }
 }

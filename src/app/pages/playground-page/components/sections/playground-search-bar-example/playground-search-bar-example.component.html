@@ -1,9 +1,9 @@
 <h2>Busca de produtos</h2>
 <form class="form-inline" [formGroup]="searchForm" >
   <div class="form-group mx-sm-4 mb-2 w-75" >
-    <input class="form-control" placeholder="search..." formControlName="search" (ngModelChange)="onSearchChange()">
+    <input class="form-control" placeholder="search..." formControlName="search">
   </div>
-  <div *ngFor="let product of filteredProducts.filteredData">
+  <div *ngFor="let product of searchProductsService.observable | async">
     <p>{{product.name}}</p>
   </div>
 </form>
