@@ -1,9 +1,5 @@
 :host ::ng-deep section {
   padding: 10px 20px;
-
-  &:nth-child(even) {
-    background-color: #f5f5f5;
-  }
 }
 
 :host :nth-child(even) ::ng-deep section {

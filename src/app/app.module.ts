@@ -13,6 +13,7 @@ import { HomeContactsComponent } from './pages/home-page/components/sections/hom
 import { PlaygroundPageComponent } from './pages/playground-page/playground-page.component';
 import { PlaygroundSearchBarExampleComponent } from './pages/playground-page/components/sections/playground-search-bar-example/playground-search-bar-example.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PlaygroundCrudProductsComponent } from './pages/playground-page/components/sections/playground-crud-products/playground-crud-products.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeContactsComponent,
     PlaygroundPageComponent,
     PlaygroundSearchBarExampleComponent,
+    PlaygroundCrudProductsComponent,
   ],
   imports: [
     BrowserModule,

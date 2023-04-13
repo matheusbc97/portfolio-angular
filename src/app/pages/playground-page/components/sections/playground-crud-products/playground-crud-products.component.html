@@ -1,0 +1,22 @@
+<section>
+  <h2>Cadastro de produtos</h2>
+  <p>Cadastrar e deletar os produtos</p>
+
+  <form class="form-inline" [formGroup]="productForm" (submit)="createProduct()" >
+    <div class="form-group mx-sm-4 mb-2 w-75" >
+      <input class="form-control" placeholder="search..." formControlName="name">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Criar</button>
+  </form>
+
+  <h3>Lista de Produtos</h3>
+  <article
+    class="my-2"
+    *ngFor="let product of products; let index = index"
+  >
+    <p>{{product.name}}</p>
+    <button class="btn btn-danger" (click)="deleteProduct(index)">Deletar</button>
+  </article>
+
+</section>
